@@ -39,15 +39,15 @@ class Restaurant {
     return new Promise((resolve, reject) => {
         //use the find() function of the database to get the data,
         //error first callback function, err for error, entries for data
-        this.db.find({}, function(err, entries){
+        this.db.find({}, function(err, recipes){
             //if error occurs then the promise will be rejected
             if(err){
                 reject(err);
                 //if no error occurs then we can resolve the promise and teh data will be returned
             }else{
-                resolve(entries);
+                resolve(recipes);
                 //to see what the returned data looks like
-                console.log('function all() returns: ', entries);
+                console.log('function all() returns: ', recipes);
             }
         })
     })
