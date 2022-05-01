@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/restaurantController.js');
 
-router.get("/", function(req, res){
-    res.redirect(about.html);
-})
+router.get("/", controller.aboutus_page);
+
+// router.get("/", function(req, res){
+//     res.redirect(aboutus.html);
+// })
 
 router.get('/dinnermenu', controller.dinner_page);
 router.get('/lunchmenu', controller.lunch_page);

@@ -13,7 +13,7 @@ class Restaurant {
       this.db.insert({
           dishName: 'Testing 1',
           dishDescription: 'very good dish',
-          dishCategory: 'Starter',
+          menuCategory: 'lunch',
           ingredients: ['ing1','ing2','ing3'],
           allergies: ['allergy4', 'allergy5'],
           cost: 40,
@@ -25,15 +25,28 @@ class Restaurant {
         dishName: 'Testing 2',
         dishDescription: 'good dish',
         dishCategory: 'Main',
+        menuCategory: 'dinner',
         ingredients: ['ing1','ing2','ing3'],
         allergies: ['allergy2', 'allergy3'],
         cost: 25,
         isAvailable: false
     });
     console.log('db entry Testing 2 inserted');
+
+    this.db.insert({
+      dishName: 'Testing 3',
+      dishDescription: 'cool dish',
+      dishCategory: 'dessert',
+      menuCategory: 'dinner',
+      ingredients: ['ing1','ing2','ing3'],
+      allergies: ['allergy2', 'allergy3'],
+      cost: 15,
+      isAvailable: true
+  });
+  console.log('db entry Testing 3 inserted');
   }
 
-  //will return all entries to the db but will only show the ones that have is available true
+  //will return all recipes from the db
   getAllRecipes(){
     //return a promise object, this can then be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -52,6 +65,45 @@ class Restaurant {
         })
     })
   }
+
+  getAllDinner(){
+    //return a promise object, this can then be resolved or rejected
+    return new Promise((resolve, reject) => {
+        //use the find() function of the database to get the data,
+        //error first callback function, err for error, entries for data
+        this.db.find({menuCategory: 'dinner'}, function(err, dinnerRecipes){
+            //if error occurs then the promise will be rejected
+            if(err){
+                reject(err);
+                //if no error occurs then we can resolve the promise and teh data will be returned
+            }else{
+                resolve(dinnerRecipes);
+                //to see what the returned data looks like
+                console.log('function all() returns: ', dinnerRecipes);
+            }
+        })
+    })
+  }
+
+  getAllLunch(){
+    //return a promise object, this can then be resolved or rejected
+    return new Promise((resolve, reject) => {
+        //use the find() function of the database to get the data,
+        //error first callback function, err for error, entries for data
+        this.db.find({menuCategory: 'lunch'}, function(err, lunchRecipes){
+            //if error occurs then the promise will be rejected
+            if(err){
+                reject(err);
+                //if no error occurs then we can resolve the promise and teh data will be returned
+            }else{
+                resolve(lunchRecipes);
+                //to see what the returned data looks like
+                console.log('function all() returns: ', lunchRecipes);
+            }
+        })
+    })
+  }
+
 }
 
 //makes the module visible outside
