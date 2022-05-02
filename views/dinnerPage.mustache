@@ -1,28 +1,42 @@
 <html>
     <head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>{{title}}</h1>
-        {{#recipes}}
-            <div>
-                <h4>{{dishName}}</h4>
-                <p>
-                    {{dishDescription}}
-                </p>
-                <p>
-                    {{ingredients}}
-                </p>
-                <p>
-                    {{allergies}}
-                </p>
-                <div>
-                    <p>Price: {{cost}}</p>
+        <div class="container">
+            <div class="menu">
+            <h2 class="menu-group-heading">
+                Starter
+            </h2>
+            {{#recipes}}
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">{{dishName}}</span>
+                            <span class="menu-item-price">£{{cost}}</span>
+                        </h3>
+                        <p class="menu-item-description">
+                        {{dishDescription}}
+                        </p>
+                        <p class="menu-item-description">
+                        Ingredients: {{ingredients}}
+                        </p>
+                        <p class="menu-item-description">
+                        Allergies: {{allergies}}
+                        </p>
+                    </div>
                 </div>
             </div>
-            <hr>
-        {{/recipes}}
-        {{^recipes}}
+            {{/recipes}}
+            {{^recipes}}
             No entries yet.
-        {{/recipes}}
+            {{/recipes}}
+        </div>
+        </div>
     </body>
 </html>

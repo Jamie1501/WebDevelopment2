@@ -1,19 +1,28 @@
 <html>
-
-<head>
-    <title> About</title>
-</head>
-
-<body>
-    <h1> About us</h1>
-    <p> Welcome to our site. We're dedicated to giving you the very best experience with a focus on dependability,
-        customer service and uniqueness.</p>
-    <p> We have come a long way from our beginnings when our passion drove us to carry out intense research and gave us
-        the impetus to turn hard work and inspiration into to a booming online presence.</p>
-
-    <p> We hope you enjoy our site. If you have any questions or comments, please don't hesitate to contact us.</p>
-
-
-</body>
-
+    <head>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        {{#recipes}}
+            <div>
+                <h4>{{dishName}}</h4>
+                <p>
+                    {{dishDescription}}
+                </p>
+                <p>
+                    {{ingredients}}
+                </p>
+                <p>
+                    {{allergies}}
+                </p>
+                <div>
+                    <p>Price: {{cost}}</p>
+                </div>
+            </div>
+            <hr>
+        {{/recipes}}
+        {{^recipes}}
+            No entries yet.
+        {{/recipes}}
+    </body>
 </html>

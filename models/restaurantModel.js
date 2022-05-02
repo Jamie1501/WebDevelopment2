@@ -12,7 +12,7 @@ class Restaurant {
   init(){
       this.db.insert({
           dishName: 'Testing 1',
-          dishDescription: 'very good dish',
+          dishDescription: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.',
           menuCategory: 'lunch',
           ingredients: ['ing1','ing2','ing3'],
           allergies: ['allergy4', 'allergy5'],
@@ -23,7 +23,7 @@ class Restaurant {
 
       this.db.insert({
         dishName: 'Testing 2',
-        dishDescription: 'good dish',
+        dishDescription: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.',
         dishCategory: 'Main',
         menuCategory: 'dinner',
         ingredients: ['ing1','ing2','ing3'],
@@ -35,7 +35,7 @@ class Restaurant {
 
     this.db.insert({
       dishName: 'Testing 3',
-      dishDescription: 'cool dish',
+      dishDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
       dishCategory: 'dessert',
       menuCategory: 'dinner',
       ingredients: ['ing1','ing2','ing3'],
