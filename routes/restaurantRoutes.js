@@ -11,6 +11,9 @@ router.get("/", controller.aboutus_page);
 router.get('/dinnermenu', controller.dinner_page);
 router.get('/lunchmenu', controller.lunch_page);
 
+router.get('/newRecipe', controller.new_recipe);
+router.post('/newRecipe', controller.post_new_recipe);
+
 router.use(function(req, res){
     res.status(404);
     res.type('text/plain');

@@ -5,12 +5,31 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+
+   <nav>
+<div class="topnav" id="myTopnav">
+  <a href="/" class="active">Home</a>
+  <a href="/lunchmenu">Lunch Menu</a>
+  <a href="/dinnermenu">Dinner Menu</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  </nav>
+
     <body>
+
+    <div class="container-add-new-recipe">
+    <a href="/newRecipe" class="button">
+    Add New Recipe
+    </a>
+
         <div class="container">
             <div class="menu">
             <h2 class="menu-group-heading">
-                Starter
+                Restaurant Dinner Menu
             </h2>
             {{#recipes}}
             <div class="menu-group">
@@ -23,10 +42,10 @@
                         <p class="menu-item-description">
                         {{dishDescription}}
                         </p>
-                        <p class="menu-item-description">
+                        <p class="menu-item-ingredients">
                         Ingredients: {{ingredients}}
                         </p>
-                        <p class="menu-item-description">
+                        <p class="menu-item-allergies">
                         Allergies: {{allergies}}
                         </p>
                     </div>
@@ -38,5 +57,6 @@
             {{/recipes}}
         </div>
         </div>
+        
     </body>
 </html>
