@@ -1,0 +1,39 @@
+
+   
+<html lang="en">
+<head>
+
+</head>
+<body class="container">
+<h2>Write a new entry</h2>
+    <form method="post" role="form" action="/newRecipe">
+        <div class="form-group">
+            <label for="dishName">Dish Name</label>
+            <input type="text" class="form-control" id="dishName" name="dishName" placeholder="Name of the Dish" required>
+        </div>
+        <div class="form-group">
+            <label for="dishDescription">Dish Description</label>
+            <input type="text" class="form-control" id="dishDescription" name="dishDescription" placeholder="Enter a Dish Description" required>
+        </div>
+        <div class="form-group">
+            <label for="menuCategory">Menu Category</label>
+            <input type="text" class="form-control" id="menuCategory" name="menuCategory" placeholder="Please Enter lunch or dinner" required>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Enter the Dish's Ingredients" required>
+        </div>
+        <div class="form-group">
+            <label for="allergies">Allergies</label>
+            <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Enter the Dish's Allergies" required>
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost</label>
+            <input type="number" class="form-control" id="cost" name="cost" placeholder="Enter the Dish's Cost" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Post recipe" class="btn btn-primary">
+        </div>
+    </form>
+</body>
+</html>

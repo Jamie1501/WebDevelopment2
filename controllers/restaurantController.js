@@ -57,6 +57,6 @@ exports.post_new_recipe = function (req, res) {
     response.status(400).send("Entries must have a description.");
     return;
   }
-  db.addEntry(req.body.dishName, req.body.dishDescription, req.body.menuCategory, req.body.ingredients, req.body.allergies, req.body.cost, req.body.isAvailable);
+  db.addRecipe(req.body.dishName, req.body.dishDescription, req.body.menuCategory, req.body.ingredients, req.body.allergies, req.body.cost);
   res.redirect("/");
 };
