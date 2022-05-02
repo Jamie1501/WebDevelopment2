@@ -20,7 +20,7 @@ exports.aboutus_page = function (req, res) {
 exports.dinner_page = function (req, res) {
   db.getAllDinner()
     .then((list) => {
-      res.render("dinnerPage",{
+      res.render("dinnerPage", {
         title: "Dinner Menu",
         recipes: list,
       });
@@ -29,9 +29,7 @@ exports.dinner_page = function (req, res) {
     .catch((err) => {
       console.log("promise rejected", err);
     });
-
 };
-
 
 exports.lunch_page = function (req, res) {
   db.getAllLunch()
@@ -47,3 +45,18 @@ exports.lunch_page = function (req, res) {
     });
 };
 
+exports.new_recipe = function (req, res) {
+  res.render("newRecipe", {
+    title: "New Recipe",
+  });
+};
+
+exports.post_new_recipe = function (req, res) {
+  console.log("processing post-new-entry controller");
+  if (!req.body.dishDescription) {
+    response.status(400).send("Entries must have a description.");
+    return;
+  }
+  db.addEntry(req.body.dishName, req.body.dishDescription, req.body.menuCategory, req.body.ingredients, req.body.allergies, req.body.cost, req.body.isAvailable);
+  res.redirect("/");
+};

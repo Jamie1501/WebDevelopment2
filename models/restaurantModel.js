@@ -1,4 +1,5 @@
 const nedb = require("nedb");
+const { all } = require("../routes/restaurantRoutes");
 
 class Restaurant {
   constructor(dbFilePath) {
@@ -141,6 +142,29 @@ class Restaurant {
       });
     });
   }
+
+
+
+addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost, isAvaiable) {
+  var entry = {
+    dishName: dishName,
+    dishDescription: dishDescription,
+    menuCategory: menuCategory,
+    ingredients: ingredients,
+    allergies: allergies,
+    cost: cost,
+    isAvailable: isAvailable,
+          };
+  console.log('entry created', entry);
+  this.db.insert(entry, function(err, doc) {
+          if (err) {
+              console.log('Error inserting document', subject);
+              } else {
+              console.log('document inserted into the database', doc);
+          }
+  })
+}  
+
 }
 
 //makes the module visible outside
