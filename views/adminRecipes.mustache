@@ -11,19 +11,13 @@
 
    <nav>
 <div class="topnav" id="myTopnav">
-  <a href="/" class="active">Home</a>
-  <a href="/lunchmenu">Lunch Menu</a>
-  <a href="/dinnermenu">Dinner Menu</a>
-  {{^user}}
-    <a id="logIn" href="/logIn" class="btn btn-primary">
-    Sign in
-    </a>
-    {{/user}}
-    {{#user}}
+  <a href="/loggedIn" class="active">Home</a>
+  <a href="/adminLunchMenu">Lunch Menu</a>
+  <a href="/adminDinnerMenu">Dinner Menu</a>
+   
     <a id="logout" href="/logout" class="btn btn-primary">
     Sign out
     </a>
-    {{/user}}
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

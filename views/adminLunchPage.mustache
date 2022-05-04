@@ -10,32 +10,27 @@
 
    <nav>
 <div class="topnav" id="myTopnav">
-  <a href="/" class="active">Home</a>
-  <a href="/lunchmenu">Lunch Menu</a>
-  <a href="/dinnermenu">Dinner Menu</a>
-  {{^user}}
-    <a id="logIn" href="/logIn" class="btn btn-primary">
-    Sign in
+  <a href="/loggedIn" class="active">Home</a>
+  <a href="/adminLunchMenu">Lunch Menu</a>
+  <a href="/adminDinnerMenu">Dinner Menu</a>
+  <a href="/newRecipe" class="button">
+    Add New Recipe
     </a>
-    {{/user}}
-    {{#user}}
     <a id="logout" href="/logout" class="btn btn-primary">
     Sign out
     </a>
-    {{/user}}
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
   </nav>
 
-    <body>
-   
+
 
         <div class="container">
             <div class="menu">
             <h2 class="menu-group-heading">
-                Restaurant Dinner Menu
+                Restaurant Lunch Menu
             </h2>
             {{#recipes}}
             <div class="menu-group">
@@ -54,6 +49,9 @@
                         <p class="menu-item-allergies">
                         Allergies: {{allergies}}
                         </p>
+                        <a href="/updateRecipe" class="button">
+                        Update Recipe
+                        </a>
                     </div>
                 </div>
             </div>
