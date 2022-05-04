@@ -165,6 +165,11 @@ addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost)
   })
 }  
 
+// findById(id){
+// this.db.find({'_id': id})
+
+// }
+
 }
 
 //makes the module visible outside

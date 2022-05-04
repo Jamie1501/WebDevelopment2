@@ -1,0 +1,75 @@
+<html lang="en">
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+
+<body class="container">
+<h2>Update Recipe</h2>
+    <form method="post" role="form" action="/updateRecipe">
+    {{#recipe}}
+        <div class="form-group">
+            <label for="dishName">Dish Name:</label>
+            <input type="text" class="input-fields" id="dishName" name="dishName" placeholder="Name of the Dish" required>
+        </div>
+
+         <p></p>
+
+        <div class="form-group">
+            <label for="dishDescription">Dish Description:</label>
+            <input type="text" class="input-fields" id="dishDescription" name="dishDescription" placeholder="Enter Dish's Description" required>
+            <br>
+        </div>
+
+         <p></p>
+
+        <div class="form-group">
+            {{! <label for="menuCategory">Choose a Category: </label>
+            <input type="text" class="input-fields" id="menuCategory" name="menuCategory" placeholder="Please enter Lunch or Dinner" required> }}
+            <label for="menuCategory">Choose a Category:</label>
+            <select id="menuCategory" name="menuCategory" class="input-fields" required>
+                <option value="">None</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+        </div>
+
+        <p></p>
+
+        <div class="form-group">
+            <label for="ingredients">Ingredients:</label>
+            <input type="text" class="input-fields" id="ingredients" name="ingredients" placeholder="Enter Dish's Ingredients" required>
+            {{! <textarea name="ingredients" class="textarea-input" form="usrform" placeholder="Enter the dish's Ingredients Here"></textarea> }}
+        </div>
+
+         <p></p>
+
+        <div class="form-group">
+            <label for="allergies">Allergies:</label>
+            <input type="text" class="input-fields" id="allergies" name="allergies" placeholder="Enter the Dish's Allergies" required>
+        </div>
+
+         <p></p>
+
+        <div class="form-group">
+            <label for="cost">Cost:</label>
+            <input type="number" class="input-fields" id="cost" step="0.01" name="cost" placeholder="Enter the Dish's Cost" required>
+        </div>
+
+         <p></p>
+
+        <div class="btn btn-primary">
+               <button class="actionButton" type="submit" formaction="/updateRecipe/{{_id}}" formmethod="post">Update Recipe</button>
+               <button class="actionButton" type="submit" formaction="/deleteRecipe/{{_id}}" formmethod="post">Delete Recipe</button>
+               <button class="actionButton" type="submit" formaction="/adminRecipes" formmethod="get" formnovalidate>Back</button>
+               {{/recipe}}
+            </div>
+    </form>
+</body>
+</html>

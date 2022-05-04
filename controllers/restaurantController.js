@@ -123,9 +123,52 @@ exports.post_new_recipe = function (req, res) {
     req.body.cost,
     req.body.isAvailable
   );
-  res.redirect("/loggedIn");
+  res.redirect("/adminLunchMenu");
 };
 
 exports.logout = function (req, res) {
   res.clearCookie("jwt").status(200).redirect("/");
+};
+
+//update and delete recipes
+
+//shows update recipes page
+exports.updateRecipe = async function (req, res) {
+  const id = req.params.id;
+  let recipes = await restaurantDAO.find(id).select("");
+  res.render("updateRecipe", { recipes });
+};
+
+//updates recipes to db
+exports.updateRecipes = async function (req, res) {
+  const id = req.params.id;
+  const dishName = req.body.dishName;
+  const dishDescription = req.body.dishDescription;
+  const menuCategory = req.body.menuCategory;
+  const ingredients = req.body.ingredients;
+  const allergies = req.body.allergies;
+  const cost = req.body.cost;
+  const isAvailable = req.body.isAvailable;
+  let recipes = await restaurantDAO.findById(
+    id,
+    {
+      dishName: dishName,
+      dishDescription: dishDescription,
+      menuCategory: menuCategory,
+      ingredients: ingredients,
+      allergies: allergies,
+      cost: cost,
+      isAvailable: isAvailable,
+    },
+    { new: true }
+  );
+  res.redirect("/adminRecipes");
+};
+
+
+//deletes recipes from db
+exports.deleteRecipe = async function (req, res) {
+  const id = req.params.id;
+  await restaurantDAO.deleteOne({ _id: id });
+  res.redirect("/adminRecipes");
 };

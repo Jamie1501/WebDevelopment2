@@ -27,12 +27,17 @@ router.get("/loggedIn",verify, controller.loggedIn_aboutUs);
 router.get("/adminDinnerMenu",verify, controller.admin_dinnerMenu);
 router.get("/adminLunchMenu",verify, controller.admin_lunchMenu);
 
+//admin update pages
+router.get('/recipe/:id', verify, controller.updateRecipe);
+router.post('/updateRecipe/:id', verify, controller.updateRecipes);
+router.post('/deleteRecipe/:id', verify, controller.deleteRecipe);
+
 //an admin can view these pages
-// router.get('/adminDinnerMenu', authenticate, controller.get_notes);
-// router.post('/adminDinnerMenu', authenticate, loggedIn, controller.post_notes);
-// router.get('/notes/:id', authenticate, controller.updateNote);
-// router.post('/updateNotes/:id', authenticate, loggedIn, controller.updateNotes);
-// router.post('/deleteNotes/:id', authenticate, loggedIn, controller.deleteNotes);
+// router.get('/adminDinnerMenu', authenticate, controller.get_recipes);
+// router.post('/adminDinnerMenu', authenticate, loggedIn, controller.post_recipes);
+// router.get('/recipe/:id', authenticate, controller.updateRecipes);
+// router.post('/updateRecipe/:id', authenticate, loggedIn, controller.updateRecipe);
+// router.post('/deleteRecipe/:id', authenticate, loggedIn, controller.deleteRecipe);
 
 router.get("/logout",verify, controller.logout);
 
