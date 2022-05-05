@@ -7,29 +7,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-
-<nav>
-<div class="topnav" id="myTopnav">
-  <a href="/loggedIn" class="active">Home</a>
-  <a href="/adminLunchMenu">Lunch Menu</a>
-  <a href="/adminDinnerMenu">Dinner Menu</a>
-   <a href="/newRecipe" class="button">
-    Add New Recipe
-    </a>
-    <a id="logout" href="/logout" class="btn btn-primary">
-    Sign out
-    </a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-  </nav>
   
-
 <body class="container">
 <h2>Update Recipe</h2>
-{{#recipe}}
-    <form id="input" method="POST" action="/editRecipe">
+
+    <form id="input" method="POST" action="/editRecipe/{{_id}}">
+    {{#recipe}}
    
         <div class="form-group">
             <label for="dishName">Dish Name:</label>
@@ -40,17 +23,15 @@
 
         <div class="form-group">
             <label for="dishDescription">Dish Description:</label>
-            <textarea class= "textarea-input"id="dishDescription" value="{{dishDescription}}" name="dishDescription" required></textarea>
+            <textarea class= "textarea-input" id="dishDescription" name="dishDescription" placeholder="testing 123" required>{{dishDescription}}</textarea>
             <br>
         </div>
 
          <p></p>
 
         <div class="form-group">
-            {{! <label for="menuCategory">Choose a Category: </label>
-            <input type="text" class="input-fields" id="menuCategory" name="menuCategory" placeholder="Please enter Lunch or Dinner" required> }}
             <label for="menuCategory">Choose a Category:</label>
-            <select id="menuCategory" name="menuCategory" class="input-fields" required>
+            <select id="menuCategory" name="menuCategory" value="{{dishDescription}} class="input-fields" required>
                 <option value="">None</option>
                 <option value="Lunch">Lunch</option>
                 <option value="Dinner">Dinner</option>
@@ -61,8 +42,7 @@
 
         <div class="form-group">
             <label for="ingredients">Ingredients:</label>
-            {{! <input type="text" class="input-fields" id="ingredients" name="ingredients" value="{{ingredients}}" required> }}
-            <textarea class= "textarea-input"id="ingredients" value="{{ingredients}}"  name="ingredients" required></textarea>
+            <textarea class= "textarea-input"id="ingredients" name="ingredients" required>{{ingredients}}</textarea>
         </div>
 
          <p></p>
@@ -81,21 +61,21 @@
 
          <p></p>
 
-         <div class="form-group">
-            <label for="isAvailable">IsAvailable:</label>
-            <input type="checkbox" class="input-fields" id="isAvailable" name="isAvailable" value="{{isAvailable}}" required>
+        <div class="form-group">
+            <label for="isAvailable">Choose Availability:</label>
+            <select id="isAvailable" name="isAvailable" value={{isAvailable}} class="input-fields" required>
+                <option value=true>Display</option>
+                <option value=false>Hide</option>
+            </select>
         </div>
 
          <p></p>
 
-
         <div class="btn btn-primary">
-               <button class="actionButton" type="submit" formaction="/updateRecipe" formmethod="post">Update Recipe</button>
-               <button class="actionButton" type="submit" formaction="/deleteRecipe" formmethod="post">Delete Recipe</button>
-               <button class="actionButton" type="submit" formaction="/adminRecipes" formmethod="get" formnovalidate>Back</button>
+               <button class="actionButton" type="submit" formmethod="post" formaction='/editRecipe/{{_id}}'>Update Recipe</button>
+               <button class="actionButton" type="submit" formaction="/deleteRecipe/{{_id}}" formmethod="get">Delete Recipe</button>
             </div>
-            
+            {{/recipe}}
     </form>
-    {{/recipe}}
 </body>
 </html>

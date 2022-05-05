@@ -29,8 +29,10 @@ router.get("/adminLunchMenu",verify, controller.admin_lunchMenu);
 
 //admin update pages
 router.get('/editRecipe/:_id', verify, controller.get_updateRecipe);
-router.post('/updateRecipe', verify, controller.post_updateRecipe);
-router.post('/deleteRecipe/', verify, controller.deleteRecipe);
+router.post('/editRecipe/:_id', verify, controller.post_updateRecipe);
+router.get('/deleteRecipe/:_id', verify, controller.deleteRecipe);
+
+//making available/unavailable
 
 //an admin can view these pages
 // router.get('/adminDinnerMenu', authenticate, controller.get_recipes);
@@ -51,6 +53,7 @@ router.use(function(err, req, res, next){
     res.status(500);
     res.type('text/plain');
     res.send('Internal Server Error');
+    console.log(err);
 })
 
 module.exports = router;

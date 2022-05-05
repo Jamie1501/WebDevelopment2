@@ -1,9 +1,9 @@
 const restaurantDAO = require("../models/restaurantModel");
 // const userDao = require("../models/userModel.js");
 
-const db = new restaurantDAO();
+const db = new restaurantDAO('test.db');
 
-db.init();
+//db.init();
 
 exports.show_login_page = function (req, res) {
   res.render("user/logIn");
@@ -158,56 +158,122 @@ exports.post_new_recipe = function (req, res) {
 // }
 
 exports.get_updateRecipe = function(req, res){
-  restaurantDAO.searchForDish({_id: req.params.id}, function(err, recipe){
-    console.log('filtering by id', req.params._id);
-    console.log(recipe)
+  db.searchForDish({_id: req.params._id}, function(err, recipe){
+   console.log('filtering by id', req.params._id);
+    console.log(recipe + 'updating')
+    // test(recipe)
     if(err){
       console.log(err)
     }else{
-      res.render('/editRecipe',{
+      res.render('editRecipe',{
         recipe: recipe
       })
     }
   });
 }
 
-exports.post_updateRecipe = function(req, res){
-      restaurantDAO.updateRecipe({_id: req.params.id},{
-        $set: {
-        name: req.body.dishName,
-        dishDescription:req.body.dishDescription,
-        menuCategory: req.body.menuCategory,
-        ingredients: req.body.ingredients,
-        allergies: req.body.allergies,
-        cost: req.body.cost,
-        isAvailable: true
-        }
-      },
-      {},
-      function(err){
-        if(err){
-          console.log(err)
-        }else{
-          restaurantDAO.loadDb()
-          console.log('Recipe is updated:', req.params.id);
-          res.redirect('/adminRecipes');
+function test(id, recipe){
+  console.log("test " + recipe.isAvailable)
+  db.updateRecipe(id, recipe)
+  // db.updateRecipe({_id: recipe.id},{
+  //       dishName: recipe.dishName,
+  //       dishDescription:recipe.dishDescription,
+  //       menuCategory:recipe.menuCategory,
+  //       ingredients: recipe.ingredients,
+  //       allergies: recipe.allergies,
+  //       cost: recipe.cost,
+  //       isAvailable: true
+  // },
+  // {},
+  //     function(err){
+  //       if(err){
+  //         console.log(err)
+  //         res.status(500)
+  //         res.send('Internal server error')
+  //       }else{
+  //         this.db.loadDb()
+  //         console.log('Recipe is updated:', req.params.id);
+  //         res.redirect('/loggedIn');
           
-        }
-      }
-      );
+  //       }
+  //     }
+  //     );
+  // recipe
+  // )
+}
+
+// exports.get_updateRecipe = function(req, res){
+//   const id = req.params.id;
+//   console.log(id)
+//   db.getRecipeById(id)
+//   .then((recipe) => {
+//     res.render('editRecipe', {
+//       recipe: recipe
+//     })
+//   })
+
+// }
+
+
+exports.post_updateRecipe = function(req, res){
+  console.log(req.body)
+  console.log(req.body.isAvailable);
+  test(req.params._id, req.body)
+  res.redirect('/adminDinnerMenu');
+      // db.updateRecipe({_id: req.params._id},{
+      //   dishName: req.body.dishName,
+      //   dishDescription:req.body.dishDescription,
+      //   menuCategory: req.body.menuCategory,
+      //   ingredients: req.body.ingredients,
+      //   allergies: req.body.allergies,
+      //   cost: req.body.cost,
+      //   isAvailable: true
+      // },
+      // {},
+      // function(err){
+      //   if(err){
+      //     console.log(err)
+      //     res.status(500)
+      //     res.send('Internal server error')
+      //   }else{
+      //     this.db.loadDb()
+      //     console.log('Recipe is updated:', req.params.id);
+      //     res.redirect('/loggedIn');
+          
+      //   }
+      // }
+      // );
     }
 
 
 //deletes recipes from db
 exports.deleteRecipe = async function (req, res) {
-  restaurantDAO.deleteDish({_id: req.params.id}, {}, (err, numRemoved) =>{
-    if(err){
-      console.log(err)
-    }else{
-      res.redirect('/adminLunchMenu')
-    }
-  })
+  // restaurantDAO.deleteDish({_id: req.params._id}, {}, (err, numRemoved) =>{
+  //   if(err){
+  //     console.log(err)
+  //   }else{
+  //     res.redirect('/adminLunchMenu')
+  //   }
+  // })
+  db.deleteDish(req.params._id, 'noobs');
+  res.redirect('/adminLunchMenu')
+  console.log(req.params)
 };
+
+
+exports.makeAvailable = function(req, res){
+  db.searchForDish({_id: req.params._id}, function(err, recipe){
+    console.log('filtering by id', req.params._id);
+     console.log(recipe + 'making available')
+     // test(recipe)
+     if(err){
+       console.log(err)
+     }else{
+       console.log(recipe.isAvailable);
+       res.redirect('/loggedIn');
+     }
+   });
+}
 
 exports.logout = function (req, res) {
   res.clearCookie("jwt").status(200).redirect("/");

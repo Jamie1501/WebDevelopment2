@@ -6,8 +6,10 @@ class Restaurant {
     if (dbFilePath) {
       this.db = new nedb({ filename: dbFilePath, autoload: true });
       console.log("DB connected to " + dbFilePath);
+      //this.init();
     } else {
       this.db = new nedb();
+      
     }
   }
   init() {
@@ -19,7 +21,7 @@ class Restaurant {
       ingredients: "1 large onion, 1 red pepper, 2 garlic cloves, 1 tbsp oil, 1 heaped tsp hot chilli powder (or 1 level tbsp if you only have mild), 1 tsp paprika, 1 tsp ground cumin, 500g lean minced beef, 1 beef stock cube, 400g can chopped tomatoes, ½ tsp dried marjoram, 1 tsp sugar (or add a thumbnail-sized piece of dark chocolate along with the beans instead, see tip), 2 tbsp tomato purée, 410g can red kidney beans, plain boiled long grain rice , to serve, soured cream , to serve",
       allergies: "",
       cost: 25.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry Chilli con carne inserted");
 
@@ -31,7 +33,7 @@ class Restaurant {
       ingredients: "1 tbsp olive oil, 4 rashers smoked streaky bacon, finely chopped, 2 medium onions, finely chopped, 2 carrots, trimmed and finely chopped, 2 celery sticks, finely chopped, 2 garlic cloves finely chopped, 2-3 sprigs rosemary leaves picked and finely chopped, 500g beef mince, For the bolognese sauce 2 x 400g tins plum tomatoes small pack basil leaves picked, ¾ finely chopped and the rest left whole for garnish, 1 tsp dried oregano, 2 fresh bay leaves, 2 tbsp tomato purée, 1 beef stock cube, 1 red chilli deseeded and finely chopped (optional), 125ml red wine, 6 cherry tomatoes sliced in half, To season and serve 75g parmesan grated plus extra to serve, 400g spaghetti, crusty bread to serve (optional)",
       allergies: "Dairy",
       cost: 23.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry spaghetti bolognese inserted");
 
@@ -43,7 +45,7 @@ class Restaurant {
       ingredients: "100g pancetta, 50g pecorino cheese, 50g parmesan, 3 large eggs, 350g spaghetti, 2 plump garlic cloves, peeled and left whole, 50g unsalted butter, sea salt and freshly ground black pepper",
       allergies: "Dairy",
       cost: 20,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry spaghetti carbonara inserted");
 
@@ -55,7 +57,7 @@ class Restaurant {
       ingredients: "ingredient 1, ingredient 2, ingredient 3",
       allergies: "Nuts, Dairy",
       cost: 15,
-      isAvailable: false
+      isAvailable: "false"
     });
     console.log("db entry Testing 4 inserted");
 
@@ -67,7 +69,7 @@ class Restaurant {
       ingredients: "ingredient 1, ingredient 2, ingredient 3",
       allergies: "Nuts",
       cost: 15,
-      isAvailable: false
+      isAvailable: "false"
     });
     console.log("db entry Testing 5 inserted");
 
@@ -79,7 +81,7 @@ class Restaurant {
       ingredients: "12 chipolatas, 1 tbsp sunflower oil, For the batter 140g plain flour, 2 eggs, 175ml semi-skimmed milk",
       allergies: "Nuts, Dairy",
       cost: 25.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry Testing 6 inserted");
 
@@ -91,7 +93,7 @@ class Restaurant {
       ingredients: "3 tbsp olive oil, 1 ¼kg beef mince, 2 onions, finely chopped, 3 carrots, chopped, 3 celery sticks, chopped, 2 garlic cloves, finely chopped, 3 tbsp plain flour, 1 tbsp tomato purée, large glass red wine (optional), 850ml beef stock 4 tbsp Worcestershire sauce, few thyme sprigs, 2 bay leaves, For the mash 1.8kg potatoes, chopped, 225ml milk, 25g butter, 200g strong cheddar, grated, freshly grated nutmeg",
       allergies: "Dairy",
       cost: 34.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry Cottage Pie inserted");
 
@@ -103,7 +105,7 @@ class Restaurant {
       ingredients: "For the base 300g strong bread flour, 1 tsp instant yeast (from a sachet or a tub), 1 tsp salt, 1 tbsp olive oil, plus extra for drizzling, For the tomato sauce 100ml passata, handful fresh basil or 1 tsp dried, 1 garlic clove, crushed, For the topping, 125g ball mozzarella, sliced, handful grated or shaved parmesan (or vegetarian alternative), handful of cherry tomatoes, halved, To finish handful of basil leaves (optional)",
       allergies: "Dairy",
       cost: 15.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry Cottage Pie inserted");
 
@@ -115,7 +117,7 @@ class Restaurant {
       ingredients: "50g baguette, cut into small chunks, 2 tbsp butter, plus 1 tbsp melted, 350g spiral or other short pasta, 1 garlic clove, finely chopped, 1 tsp English mustard powder, 3 tbsp plain flour, 500ml whole milk, 250g vegetarian mature cheddar, grated, 50g parmesan (or vegetarian alternative), grated",
       allergies: "Dairy",
       cost: 20.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry macaroni cheese inserted");
 
@@ -127,7 +129,7 @@ class Restaurant {
       ingredients: "1kg Maris Piper potatoes, peeled and halved, 400ml milk, plus a splash, 25g butter, plus a knob, 25g plain flour, 4 spring onions, finely sliced, 1 x pack fish pie mix (cod, salmon, smoked haddock etc, weight around 320g-400g depending on pack size), 1 tsp Dijon or English mustard, ½ a 25g pack or a small bunch chives, finely snipped, handful frozen sweetcorn, handful frozen petits pois, handful grated cheddar",
       allergies: "Dairy",
       cost: 24.99,
-      isAvailable: true
+      isAvailable: "true"
     });
     console.log("db entry Fish Pie inserted");
 
@@ -158,7 +160,7 @@ class Restaurant {
     return new Promise((resolve, reject) => {
       //use the find() function of the database to get the data,
       //error first callback function, err for error, entries for data
-      this.db.find({ menuCategory: "Dinner", isAvailable: true}, function (err, dinnerRecipes) {
+      this.db.find({ menuCategory: "Dinner", isAvailable: "true"}, function (err, dinnerRecipes) {
         //if error occurs then the promise will be rejected
         if (err) {
           reject(err);
@@ -178,7 +180,7 @@ class Restaurant {
     return new Promise((resolve, reject) => {
       //use the find() function of the database to get the data,
       //error first callback function, err for error, entries for data
-      this.db.find({ menuCategory: "Lunch", isAvailable: true}, function (err, lunchRecipes) {
+      this.db.find({ menuCategory: "Lunch", isAvailable: "true"}, function (err, lunchRecipes) {
         //if error occurs then the promise will be rejected
         if (err) {
           reject(err);
@@ -233,7 +235,7 @@ class Restaurant {
 
 
 
-addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost) {
+addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost, isAvailable) {
   var entry = {
     dishName: dishName,
     dishDescription: dishDescription,
@@ -241,7 +243,7 @@ addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost)
     ingredients: ingredients,
     allergies: allergies,
     cost: cost,
-    isAvailable: true
+    isAvailable: isAvailable
           };
   console.log('entry created', entry);
   this.db.insert(entry, function(err, doc) {
@@ -271,34 +273,79 @@ getRecipeById(id) {
 });
 }
 
-updateRecipe(dishName, dishDescription, menuCategory, ingredient, allergies, cost, isAvailable, _id){
-    this.db.update({_id:_id},{
-      $set:{
-        dishName: dishName,
-        dishDescription:dishDescription,
-        menuCategory: menuCategory,
-        ingredient:ingredient,
-        allergies: allergies,
-        cost: cost,
-        isAvailable: isAvailable,
-        _id: _id
-      }
-    }, {upsert: true}, function(err, doc){
-      if(err){
-        console.log("could not add ", dishName);
-      } else{
-        console.log(dishName, "Edit Completed");
-      }
-    });
+updateRecipe(id, details){
+  console.log(id)
+  console.log(details.isAvailable)
+  this.db.update({_id: id}, {$set: details},{}, (err, num) => {
+    if(err){
+      console.log(err);
+      return
+    }
+      console.log('updated' + num);
+  })
 }
+      // this.db.update({
+      //   _id: details.id, 
+      //   dishName: details.dishName,
+      //   dishDescription: details.dishDescription,
+      //   menuCategory: details.menuCategory,
+      //   ingredient: details.ingredient,
+      //   allergies: details.allergies,
+      //   cost: details.cost,
+      //   isAvailable: details.isAvailable,
+      // },{
+      //    $set:{ 
+      //     taskDone: "true"
+      //    }
+      // }, {}, function(err, doc){
+      //   if(err){
+      //     console.log(err);
+      //     console.log("could not add ", dishName);
+      //   } else{
+      //     console.log(doc, "Edit Completed");
+      //     // this.loadDb();
+      //   }
+      // });
+
+// updateRecipe(id, dishName, dishDescription, menuCategory, ingredient, allergies, cost, isAvailable){
+//   console.log('update' + id.id)
+//     this.db.update({
+//       _id: id, 
+//       dishName: dishName,
+//       dishDescription:dishDescription,
+//       menuCategory: menuCategory,
+//       ingredient:ingredient,
+//       allergies: allergies,
+//       cost: cost,
+//       isAvailable: isAvailable,
+//     },{
+//        $set:{ 
+//         taskDone: "true"
+//        }
+//     }, {}, function(err, doc){
+//       if(err){
+//         console.log(err);
+//         console.log("could not add ", dishName);
+//       } else{
+//         console.log(doc, "Edit Completed");
+//         // this.loadDb();
+//       }
+//     });
+// }
 
 //find the required dish
 searchForDish(query, cb){
-this.db.findOne(query, cb)
+  this.db.findOne(query, cb);
 }
 
-deleteDish(query, options, cb){
-  this.db.remove(query, options, cb);
+deleteDish(id, dishName){
+  this.db.remove({_id: id}, {}, (err, docs) => {
+    if(err){
+      console.log(err);
+    }else{
+      console.log(dishName + "Removed from database");
+    }
+  })
 }
 
 loadDb(){
