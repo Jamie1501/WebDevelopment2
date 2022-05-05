@@ -11,7 +11,7 @@
 
 
 <body class="container">
-<h2>Write a new entry</h2>
+<h2>Create a new Recipe</h2>
     <form method="post" role="form" action="/newRecipe">
         <div class="form-group">
             <label for="dishName">Dish Name:</label>
@@ -23,7 +23,7 @@
         <div class="form-group">
             <label for="dishDescription">Dish Description:</label>
             {{! <input type="text" class="input-fields" id="dishDescription" name="dishDescription" placeholder="Enter Dish's Description" required> }}
-            <textarea class= "textarea-input"id="dishDescription" placeholder="Type your Note Content here..." name="dishDescription" required></textarea> 
+            <textarea class= "textarea-input"id="dishDescription" placeholder="Type your Description here..." name="dishDescription" required></textarea> 
         </div>
 
          <p></p>
@@ -43,8 +43,8 @@
 
         <div class="form-group">
             <label for="ingredients">Ingredients:</label>
-            <input type="text" class="input-fields" id="ingredients" name="ingredients" placeholder="Enter Dish's Ingredients" required>
-            {{! <textarea name="ingredients" class="textarea-input" form="usrform" placeholder="Enter the dish's Ingredients Here"></textarea> }}
+            {{! <input type="text" class="input-fields" id="ingredients" name="ingredients" placeholder="Enter Dish's Ingredients" required> }}
+            <textarea class= "textarea-input"id="ingredients" placeholder="Type your ingerdients here..." name="ingredients" required></textarea>
         </div>
 
          <p></p>
