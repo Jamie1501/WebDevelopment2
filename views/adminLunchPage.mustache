@@ -13,7 +13,7 @@
   <a href="/loggedIn" class="active">Home</a>
   <a href="/adminLunchMenu">Lunch Menu</a>
   <a href="/adminDinnerMenu">Dinner Menu</a>
-  <a href="/newRecipe" class="button">
+  <a href="/newRecipe">
     Add New Recipe
     </a>
     <a id="logout" href="/logout" class="btn btn-primary">
@@ -49,8 +49,11 @@
                         <p class="menu-item-allergies">
                         Allergies: {{allergies}}
                         </p>
-                        <a href="/editRecipe/{{_id}}" class="button">
+                        <a href="/editRecipe/{{_id}}" formaction="/editRecipe/{{_id}}" class="button">
                         Update Recipe
+                        </a>
+                         <a href="/loggedIn" formaction="/deleteRecipe/{{_id}}" class="button">
+                         Delete DIsh
                         </a>
                     </div>
                 </div>

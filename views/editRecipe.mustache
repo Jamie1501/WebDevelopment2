@@ -29,7 +29,7 @@
 <body class="container">
 <h2>Update Recipe</h2>
 {{#recipe}}
-    <form id="input" method="post" action="/editRecipe/{{_id}}">
+    <form id="input" method="POST" action="/editRecipe">
    
         <div class="form-group">
             <label for="dishName">Dish Name:</label>
@@ -61,8 +61,8 @@
 
         <div class="form-group">
             <label for="ingredients">Ingredients:</label>
-            <input type="text" class="input-fields" id="ingredients" name="ingredients" value="{{ingredients}}" required>
-            {{! <textarea name="ingredients" class="textarea-input" form="usrform" placeholder="Enter the dish's Ingredients Here"></textarea> }}
+            {{! <input type="text" class="input-fields" id="ingredients" name="ingredients" value="{{ingredients}}" required> }}
+            <textarea class= "textarea-input"id="ingredients" value="{{ingredients}}"  name="ingredients" required></textarea>
         </div>
 
          <p></p>

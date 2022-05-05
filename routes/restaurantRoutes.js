@@ -29,7 +29,7 @@ router.get("/adminLunchMenu",verify, controller.admin_lunchMenu);
 
 //admin update pages
 router.get('/editRecipe/:_id', verify, controller.get_updateRecipe);
-router.post('/editRecipe/:_id', verify, controller.post_updateRecipe);
+router.post('/updateRecipe', verify, controller.post_updateRecipe);
 router.post('/deleteRecipe/', verify, controller.deleteRecipe);
 
 //an admin can view these pages

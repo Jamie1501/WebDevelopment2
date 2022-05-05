@@ -12,40 +12,40 @@ class Restaurant {
   }
   init() {
     this.db.insert({
-      dishName: "Testing 1",
+      dishName: "Chilli con carne",
       dishDescription:
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.",
+        "This great chilli recipe has to be one of the best dishes to serve to friends for a casual get-together. An easy sharing favourite that uses up storecupboard ingredients.",
       menuCategory: "Lunch",
-      ingredients: "ingredient 1, ingredient 2, ingredient 3",
-      allergies: "Nuts, Dairy",
-      cost: 40,
+      ingredients: "1 large onion, 1 red pepper, 2 garlic cloves, 1 tbsp oil, 1 heaped tsp hot chilli powder (or 1 level tbsp if you only have mild), 1 tsp paprika, 1 tsp ground cumin, 500g lean minced beef, 1 beef stock cube, 400g can chopped tomatoes, ½ tsp dried marjoram, 1 tsp sugar (or add a thumbnail-sized piece of dark chocolate along with the beans instead, see tip), 2 tbsp tomato purée, 410g can red kidney beans, plain boiled long grain rice , to serve, soured cream , to serve",
+      allergies: "",
+      cost: 25.99,
       isAvailable: true
     });
-    console.log("db entry Testing 1 inserted");
+    console.log("db entry Chilli con carne inserted");
 
     this.db.insert({
-      dishName: "Testing 2",
+      dishName: "spaghetti bolognese",
       dishDescription:
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.",
+        "Our best ever spaghetti bolognese is super easy and a true Italian classic with a meaty, chilli sauce. This recipe comes courtesy of BBC Good Food user Andrew Balmer",
       menuCategory: "Dinner",
-      ingredients: "ingredient 1, ingredient 2",
+      ingredients: "1 tbsp olive oil, 4 rashers smoked streaky bacon, finely chopped, 2 medium onions, finely chopped, 2 carrots, trimmed and finely chopped, 2 celery sticks, finely chopped, 2 garlic cloves finely chopped, 2-3 sprigs rosemary leaves picked and finely chopped, 500g beef mince, For the bolognese sauce 2 x 400g tins plum tomatoes small pack basil leaves picked, ¾ finely chopped and the rest left whole for garnish, 1 tsp dried oregano, 2 fresh bay leaves, 2 tbsp tomato purée, 1 beef stock cube, 1 red chilli deseeded and finely chopped (optional), 125ml red wine, 6 cherry tomatoes sliced in half, To season and serve 75g parmesan grated plus extra to serve, 400g spaghetti, crusty bread to serve (optional)",
       allergies: "Dairy",
-      cost: 25,
+      cost: 23.99,
       isAvailable: true
     });
-    console.log("db entry Testing 2 inserted");
+    console.log("db entry spaghetti bolognese inserted");
 
     this.db.insert({
-      dishName: "Testing 3",
+      dishName: "spaghetti carbonara",
       dishDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Discover how to make superb spaghetti carbonara. This cheesy pasta dish is an Italian favourite and with the right technique, you can make it perfect every time",
       menuCategory: "Dinner",
-      ingredients: "ingredient 1",
-      allergies: "Nuts, Dairy",
-      cost: 15,
+      ingredients: "100g pancetta, 50g pecorino cheese, 50g parmesan, 3 large eggs, 350g spaghetti, 2 plump garlic cloves, peeled and left whole, 50g unsalted butter, sea salt and freshly ground black pepper",
+      allergies: "Dairy",
+      cost: 20,
       isAvailable: true
     });
-    console.log("db entry Testing 3 inserted");
+    console.log("db entry spaghetti carbonara inserted");
 
     this.db.insert({
       dishName: "Testing 4",
@@ -72,16 +72,65 @@ class Restaurant {
     console.log("db entry Testing 5 inserted");
 
     this.db.insert({
-      dishName: "Testing 6",
+      dishName: "Toad in the Hole",
       dishDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Serve this comforting classic made with chipolata sausages and a simple batter, its easy enough that kids can help make it.",
       menuCategory: "Lunch",
-      ingredients: "ingredient 1, ingredient 2, ingredient 3",
+      ingredients: "12 chipolatas, 1 tbsp sunflower oil, For the batter 140g plain flour, 2 eggs, 175ml semi-skimmed milk",
       allergies: "Nuts, Dairy",
-      cost: 15,
+      cost: 25.99,
       isAvailable: true
     });
     console.log("db entry Testing 6 inserted");
+
+    this.db.insert({
+      dishName: "Cottage Pie",
+      dishDescription:
+        "This great-value family favourite freezes beautifully and is a guaranteed crowd-pleaser.",
+      menuCategory: "Dinner",
+      ingredients: "3 tbsp olive oil, 1 ¼kg beef mince, 2 onions, finely chopped, 3 carrots, chopped, 3 celery sticks, chopped, 2 garlic cloves, finely chopped, 3 tbsp plain flour, 1 tbsp tomato purée, large glass red wine (optional), 850ml beef stock 4 tbsp Worcestershire sauce, few thyme sprigs, 2 bay leaves, For the mash 1.8kg potatoes, chopped, 225ml milk, 25g butter, 200g strong cheddar, grated, freshly grated nutmeg",
+      allergies: "Dairy",
+      cost: 34.99,
+      isAvailable: true
+    });
+    console.log("db entry Cottage Pie inserted");
+
+    this.db.insert({
+      dishName: "Pizza Margherita",
+      dishDescription:
+        "Even a novice cook can master the art of pizza with our simple step-by-step guide. Bellissimo!.",
+      menuCategory: "Lunch",
+      ingredients: "For the base 300g strong bread flour, 1 tsp instant yeast (from a sachet or a tub), 1 tsp salt, 1 tbsp olive oil, plus extra for drizzling, For the tomato sauce 100ml passata, handful fresh basil or 1 tsp dried, 1 garlic clove, crushed, For the topping, 125g ball mozzarella, sliced, handful grated or shaved parmesan (or vegetarian alternative), handful of cherry tomatoes, halved, To finish handful of basil leaves (optional)",
+      allergies: "Dairy",
+      cost: 15.99,
+      isAvailable: true
+    });
+    console.log("db entry Cottage Pie inserted");
+
+    this.db.insert({
+      dishName: "macaroni cheese",
+      dishDescription:
+        "This perfect baked macaroni cheese recipe comes with a creamy cheese sauce, a hint of mustard and uses leftover French stick for its crunchy topping.",
+      menuCategory: "Lunch",
+      ingredients: "50g baguette, cut into small chunks, 2 tbsp butter, plus 1 tbsp melted, 350g spiral or other short pasta, 1 garlic clove, finely chopped, 1 tsp English mustard powder, 3 tbsp plain flour, 500ml whole milk, 250g vegetarian mature cheddar, grated, 50g parmesan (or vegetarian alternative), grated",
+      allergies: "Dairy",
+      cost: 20.99,
+      isAvailable: true
+    });
+    console.log("db entry macaroni cheese inserted");
+
+    this.db.insert({
+      dishName: "Fish Pie",
+      dishDescription:
+        "A simple fish pie recipe thats quick and easy to prepare. Portion into ramekins and freeze for quick toddler meals or cook in a big dish for the perfect family supper.",
+      menuCategory: "Dinner",
+      ingredients: "1kg Maris Piper potatoes, peeled and halved, 400ml milk, plus a splash, 25g butter, plus a knob, 25g plain flour, 4 spring onions, finely sliced, 1 x pack fish pie mix (cod, salmon, smoked haddock etc, weight around 320g-400g depending on pack size), 1 tsp Dijon or English mustard, ½ a 25g pack or a small bunch chives, finely snipped, handful frozen sweetcorn, handful frozen petits pois, handful grated cheddar",
+      allergies: "Dairy",
+      cost: 24.99,
+      isAvailable: true
+    });
+    console.log("db entry Fish Pie inserted");
+
   }
 
   //will return all recipes from the db
@@ -130,6 +179,45 @@ class Restaurant {
       //use the find() function of the database to get the data,
       //error first callback function, err for error, entries for data
       this.db.find({ menuCategory: "Lunch", isAvailable: true}, function (err, lunchRecipes) {
+        //if error occurs then the promise will be rejected
+        if (err) {
+          reject(err);
+          //if no error occurs then we can resolve the promise and teh data will be returned
+        } else {
+          resolve(lunchRecipes);
+          //to see what the returned data looks like
+          console.log("function all() returns: ", lunchRecipes);
+        }
+      });
+    });
+  }
+
+  getAllDinnerAdmin() {
+    //return a promise object, this can then be resolved or rejected
+    return new Promise((resolve, reject) => {
+      //use the find() function of the database to get the data,
+      //error first callback function, err for error, entries for data
+      this.db.find({ menuCategory: "Dinner"}, function (err, dinnerRecipes) {
+        //if error occurs then the promise will be rejected
+        if (err) {
+          reject(err);
+          //if no error occurs then we can resolve the promise and teh data will be returned
+        } else {
+          resolve(dinnerRecipes);
+          //to see what the returned data looks like
+          console.log("function all() returns: ", dinnerRecipes);
+        }
+      });
+    });
+  }
+
+  
+  getAllLunchAdmin() {
+    //return a promise object, this can then be resolved or rejected
+    return new Promise((resolve, reject) => {
+      //use the find() function of the database to get the data,
+      //error first callback function, err for error, entries for data
+      this.db.find({ menuCategory: "Lunch"}, function (err, lunchRecipes) {
         //if error occurs then the promise will be rejected
         if (err) {
           reject(err);

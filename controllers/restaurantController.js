@@ -75,7 +75,7 @@ exports.lunch_page = function (req, res) {
 };
 
 exports.admin_lunchMenu = function (req, res) {
-  db.getAllLunch()
+  db.getAllLunchAdmin()
     .then((list) => {
       res.render("adminlunchPage", {
         title: "Lunch Menu",
@@ -89,7 +89,7 @@ exports.admin_lunchMenu = function (req, res) {
 };
 
 exports.admin_dinnerMenu = function (req, res) {
-  db.getAllDinner()
+  db.getAllDinnerAdmin()
     .then((list) => {
       res.render("adminDinnerPage", {
         title: "Dinner Menu",
@@ -204,7 +204,7 @@ exports.deleteRecipe = async function (req, res) {
     if(err){
       console.log(err)
     }else{
-      res.redirect('/adminRecipe')
+      res.redirect('/adminLunchMenu')
     }
   })
 };

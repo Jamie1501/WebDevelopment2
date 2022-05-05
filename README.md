@@ -29,14 +29,20 @@ This page allows staff to log in to their account then it grants them admin acce
 Admin About Us Home
 This page keeps regular users and admin pages separate to make sure its easier to follow and understand
 
+Admin Dinner Menu
+This allows an admin to see all the dinner recipes even the ones that arent available atm so they can make them available
+
+Admin Lunch Menu
+This allows an admin to see all the lunch recipes even the ones that arent available atm so they can make them available
+
 New Recipe
 This feature allows a logged in user to create a new recipe to be displayed to all the users of website
 
 Admin Edit
-This feature allows staff to edit a specific recipe and update the changes.
+This feature allows staff to edit a specific recipe and update the changes.(as of recent changes this page will no longer work)
 
 Admin Delete
-This feature allows staff to remove a specific recipe from the site.
+This feature allows staff to remove a specific recipe from the site.(due to the edit page not working the delete option is also broken)
 
 Logout
 This feature Logs out the current staff from the application , now the user would not have authorisation to access staff functions.
