@@ -39,10 +39,10 @@ New Recipe
 This feature allows a logged in user to create a new recipe to be displayed to all the users of website
 
 Admin Edit
-This feature allows staff to edit a specific recipe and update the changes.(as of recent changes this page will no longer work)
+This feature allows staff to edit a specific recipe and update the changes.
 
 Admin Delete
-This feature allows staff to remove a specific recipe from the site.(due to the edit page not working the delete option is also broken)
+This feature allows staff to remove a specific recipe from the site.
 
 Logout
 This feature Logs out the current staff from the application , now the user would not have authorisation to access staff functions.
