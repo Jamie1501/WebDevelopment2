@@ -159,6 +159,7 @@ exports.post_new_recipe = function (req, res) {
 
 exports.get_updateRecipe = function(req, res){
   restaurantDAO.searchForDish({_id: req.params.id}, function(err, recipe){
+    console.log('filtering by id', req.params._id);
     console.log(recipe)
     if(err){
       console.log(err)
