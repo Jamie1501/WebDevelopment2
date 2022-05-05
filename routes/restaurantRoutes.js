@@ -28,9 +28,9 @@ router.get("/adminDinnerMenu",verify, controller.admin_dinnerMenu);
 router.get("/adminLunchMenu",verify, controller.admin_lunchMenu);
 
 //admin update pages
-router.get('/recipe/:id', verify, controller.updateRecipe);
-router.post('/updateRecipe/:id', verify, controller.updateRecipes);
-router.post('/deleteRecipe/:id', verify, controller.deleteRecipe);
+router.get('/editRecipe/:_id', verify, controller.get_updateRecipe);
+router.post('/editRecipe/:_id', verify, controller.post_updateRecipe);
+router.post('/deleteRecipe/', verify, controller.deleteRecipe);
 
 //an admin can view these pages
 // router.get('/adminDinnerMenu', authenticate, controller.get_recipes);

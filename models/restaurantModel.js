@@ -170,6 +170,53 @@ addRecipe(dishName, dishDescription, menuCategory, ingredients, allergies, cost)
 
 // }
 
+getRecipeById(id) {
+  return new Promise((resolve, reject) => {
+      this.db.find({ _id: id }, function(err, recipe) {
+      if (err) {
+          reject(err);
+      } else {
+          resolve(recipe);
+          console.log('getRecipeById returns: ', recipe);
+  }
+});
+});
+}
+
+updateRecipe(dishName, dishDescription, menuCategory, ingredient, allergies, cost, isAvailable, _id){
+    this.db.update({_id:_id},{
+      $set:{
+        dishName: dishName,
+        dishDescription:dishDescription,
+        menuCategory: menuCategory,
+        ingredient:ingredient,
+        allergies: allergies,
+        cost: cost,
+        isAvailable: isAvailable,
+        _id: _id
+      }
+    }, {upsert: true}, function(err, doc){
+      if(err){
+        console.log("could not add ", dishName);
+      } else{
+        console.log(dishName, "Edit Completed");
+      }
+    });
+}
+
+//find the required dish
+searchForDish(query, cb){
+this.db.findOne(query, cb)
+}
+
+deleteDish(query, options, cb){
+  this.db.remove(query, options, cb);
+}
+
+loadDb(){
+  this.db.loadDatabase();
+}
+
 }
 
 //makes the module visible outside
