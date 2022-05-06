@@ -32,7 +32,7 @@ exports.login = function (req, res,next) {
   };
   
   exports.verify = function (req, res, next) {
-    let accessToken = req.cookies.jwt;
+    let accessToken = req.cookies['jwt'];
     if (!accessToken) {
       return res.status(403).send();
     }
@@ -41,7 +41,7 @@ exports.login = function (req, res,next) {
       payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
       next();
     } catch (e) {
-      //if an error occured return request unauthorized error
+      //if an error occurred return request unauthorized error
       res.status(401).send();
     }
   };
