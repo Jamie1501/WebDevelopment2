@@ -2,7 +2,7 @@
 1.Clone the repository
 git clone https://github.com/Jamie1501/WebDevelopment2.git or download the zip file
 2.create a .env file and add 
-ACCESS_TOKEN_SECRET = "Access cookie token"
+ACCESS_TOKEN_SECRET = AccessCookieToken
 PORT = 3000
 Admin1 Password = AdminPassword1 
 3.Type 'npm install' in the terminal
