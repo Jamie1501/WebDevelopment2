@@ -58,4 +58,6 @@ Changed the layout of all pages to be horizontal as opposed to vertical as it ma
 Originally planned to use the basic font however i watched a video on using google fonts and implimeneted one that i thought was easy to read and helped draw more attention to the horizontal layout
 
 # Link to the live version/deployed site
-enter link here
+The deployed site is having issues with not recognising the secret token and therefore you cannot log in a video will be uploaded as well.
+
+https://webdevelopmentcoursework2.herokuapp.com/
