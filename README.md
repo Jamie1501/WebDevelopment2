@@ -1,12 +1,16 @@
 # WebDevelopment2
 1.Clone the repository
 git clone https://github.com/Jamie1501/WebDevelopment2.git or download the zip file
-2.Type 'npm install' in the terminal
-3.Run the applicaton by typing the following in the terminal:
+2.create a .env file and add 
+ACCESS_TOKEN_SECRET = "Access cookie token"
+PORT = 3000
+Admin1 Password = AdminPassword1 
+3.Type 'npm install' in the terminal
+4.Run the applicaton by typing the following in the terminal:
 node index
-4.Now the user can view the website in the browser by following this url:
+5.Now the user can view the website in the browser by following this url:
 http://localhost:3000
-5.Log In details:
+6.Log In details:
 Username: Admin1
 Password: AdminPassword1
 
